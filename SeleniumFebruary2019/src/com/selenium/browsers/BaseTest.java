@@ -16,13 +16,19 @@ public class BaseTest {
 	public static String projectpath=System.getProperty("user.dir");
 	public static FileInputStream fis;
 	public static Properties p;
+	public static Properties envprop;
 	
 	public static void init() throws Exception 
 	{
 		fis=new FileInputStream(projectpath+"//data.properties");
 		p = new Properties();
 		p.load(fis);
+		
+		fis = new FileInputStream(projectpath+"//environment.properties");
+		envprop = new Properties();
+		p.load(fis);
 	}
+	
 	
 	public static void launch(String browser) {
 		
